@@ -15,6 +15,9 @@
 		C68FC63E2B97D0A100075420 /* TopStoriesNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC63D2B97D0A100075420 /* TopStoriesNewsViewController.swift */; };
 		C68FC6402B97D0AC00075420 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC63F2B97D0AC00075420 /* SearchResultsViewController.swift */; };
 		C68FC6422B97D0B600075420 /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6412B97D0B600075420 /* StockDetailsViewController.swift */; };
+		C68FC6442B97D35D00075420 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6432B97D35D00075420 /* NetworkManager.swift */; };
+		C68FC6462B97D36C00075420 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6452B97D36C00075420 /* PersistenceManager.swift */; };
+		C68FC6482B97D37A00075420 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6472B97D37A00075420 /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		C68FC63D2B97D0A100075420 /* TopStoriesNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesNewsViewController.swift; sourceTree = "<group>"; };
 		C68FC63F2B97D0AC00075420 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		C68FC6412B97D0B600075420 /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
+		C68FC6432B97D35D00075420 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C68FC6452B97D36C00075420 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		C68FC6472B97D37A00075420 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 		C68FC63A2B97BF5700075420 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C68FC6432B97D35D00075420 /* NetworkManager.swift */,
+				C68FC6452B97D36C00075420 /* PersistenceManager.swift */,
+				C68FC6472B97D37A00075420 /* HapticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -191,8 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68FC6482B97D37A00075420 /* HapticsManager.swift in Sources */,
 				C68FC6422B97D0B600075420 /* StockDetailsViewController.swift in Sources */,
+				C68FC6442B97D35D00075420 /* NetworkManager.swift in Sources */,
 				C68FC6282B97BEBE00075420 /* WatchListViewController.swift in Sources */,
+				C68FC6462B97D36C00075420 /* PersistenceManager.swift in Sources */,
 				C68FC63E2B97D0A100075420 /* TopStoriesNewsViewController.swift in Sources */,
 				C68FC6242B97BEBE00075420 /* AppDelegate.swift in Sources */,
 				C68FC6262B97BEBE00075420 /* SceneDelegate.swift in Sources */,
