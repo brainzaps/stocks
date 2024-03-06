@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class WatchListViewController: UIViewController {
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -21,6 +21,9 @@ class WatchListViewController: UIViewController {
 	
 	private func setUpSearchController() {
 		let resultVC = SearchResultsViewController()
+		
+		resultVC.delegate = self
+		
 		let searchVC = UISearchController(searchResultsController: resultVC)
 		searchVC.searchResultsUpdater = self
 		
@@ -37,7 +40,7 @@ class WatchListViewController: UIViewController {
 		titleView.addSubview(label)
 		navigationItem.titleView = titleView
 	}
-
+	
 }
 
 extension WatchListViewController: UISearchResultsUpdating {
@@ -46,6 +49,25 @@ extension WatchListViewController: UISearchResultsUpdating {
 					let resultVC = searchController.searchResultsController as? SearchResultsViewController,
 					!query.trimmingCharacters(in: .whitespaces).isEmpty else { return }
 		
+		
+		EasyDebounce.debounce("WatchListViewController") {
+			Task { @MainActor in
+				let result = await	NetworkManager.shared.search(query: query)
+				switch result {
+				case .failure(let error):
+					resultVC.update(with: [])
+				case .success(let response):
+					resultVC.update(with: response.result)
+				}
+			}
+		}
+		
+	}
+}
+
+extension WatchListViewController: SearchResultsViewControllerDelegate {
+	func searchResultsViewControllerDidSelect(searchResult: SearchResult) {
+		navigationItem.searchController?.dismiss(animated: true)
 	}
 	
 	
