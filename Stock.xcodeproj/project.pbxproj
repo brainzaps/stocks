@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C632F5762B99113900F8AC94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C632F5752B99113900F8AC94 /* Extensions.swift */; };
 		C68FC6242B97BEBE00075420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6232B97BEBE00075420 /* AppDelegate.swift */; };
 		C68FC6262B97BEBE00075420 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6252B97BEBE00075420 /* SceneDelegate.swift */; };
 		C68FC6282B97BEBE00075420 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FC6272B97BEBE00075420 /* WatchListViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C632F5752B99113900F8AC94 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C68FC6202B97BEBE00075420 /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68FC6232B97BEBE00075420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68FC6252B97BEBE00075420 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		C68FC63B2B97BF6800075420 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C632F5752B99113900F8AC94 /* Extensions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				C68FC6442B97D35D00075420 /* NetworkManager.swift in Sources */,
 				C68FC6282B97BEBE00075420 /* WatchListViewController.swift in Sources */,
 				C68FC6462B97D36C00075420 /* PersistenceManager.swift in Sources */,
+				C632F5762B99113900F8AC94 /* Extensions.swift in Sources */,
 				C68FC63E2B97D0A100075420 /* TopStoriesNewsViewController.swift in Sources */,
 				C68FC6242B97BEBE00075420 /* AppDelegate.swift in Sources */,
 				C68FC6262B97BEBE00075420 /* SceneDelegate.swift in Sources */,
