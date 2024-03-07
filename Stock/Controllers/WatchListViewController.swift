@@ -54,7 +54,7 @@ extension WatchListViewController: UISearchResultsUpdating {
 			Task { @MainActor in
 				let result = await	NetworkManager.shared.search(query: query)
 				switch result {
-				case .failure(let error):
+				case .failure:
 					resultVC.update(with: [])
 				case .success(let response):
 					resultVC.update(with: response.result)
@@ -67,7 +67,12 @@ extension WatchListViewController: UISearchResultsUpdating {
 
 extension WatchListViewController: SearchResultsViewControllerDelegate {
 	func searchResultsViewControllerDidSelect(searchResult: SearchResult) {
-		navigationItem.searchController?.dismiss(animated: true)
+		navigationItem.searchController?.searchBar.resignFirstResponder()
+		
+		let vc = StockDetailsViewController()
+		let nav = UINavigationController(rootViewController: vc)
+		vc.title = searchResult.description
+		present(nav, animated: true)
 	}
 	
 	
