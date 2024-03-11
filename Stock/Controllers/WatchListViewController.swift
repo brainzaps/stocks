@@ -23,7 +23,7 @@ class WatchListViewController: UIViewController {
 	}
 	
 	private func setUpFloatingPanel() {
-		let vc = NewsViewController()
+		let vc = NewsViewController(type: .topStories)
 		
 		let panel = FloatingPanelController()
 		
