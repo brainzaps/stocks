@@ -11,11 +11,12 @@ class NewsViewController: UIViewController {
 	
 	public let tableView: UITableView = {
 		let table = UITableView()
+		table.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
 		table.backgroundColor = .clear
 		return table
 	}()
 	
-	private var type: Type?
+	private var type: Type
 	
 	enum `Type` {
 		case topStories
@@ -30,6 +31,8 @@ class NewsViewController: UIViewController {
 			}
 		}
 	}
+	
+	private var stories = [String]()
 	
 	init(type: Type) {
 		self.type = type
@@ -69,11 +72,16 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-	 return UITableViewCell()
+		return UITableViewCell()
 	}
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		return nil
+		guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: NewsHeaderView.identifier  ) as? NewsHeaderView else {
+			return nil
+		}
+		
+		header.configure(with: .init(title: self.type.title , shouldShowAddButton: false))
+		return header
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,7 +89,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 70
+		return NewsHeaderView.preferredHeight
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
