@@ -8,5 +8,6 @@ target 'Stock' do
 
   # Pods for Stock
 	pod 'FloatingPanel'
+	pod 'SDWebImage'
 
 end
