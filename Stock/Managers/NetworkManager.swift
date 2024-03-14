@@ -34,11 +34,35 @@ final class NetworkManager {
 		return result
 	}
 	
+	public func news(for type: NewsViewController.`Type`) async -> Result<[NewsStory], Error> {
+		
+		let today = Date()
+		let oneMonthBack = today.addingTimeInterval(-(3600 * 24 * 30))
+
+		let url = switch type {
+		case .topStories:
+			self.url(for: .topStories, queryParams: ["category": "general"])
+		case .compan(let symbol):
+			self.url(for: .companyNews,
+							 queryParams: [
+								"symbol": symbol,
+								"from": DateFormatter.newsDateFormatter.string(from: oneMonthBack),
+								"to": DateFormatter.newsDateFormatter.string(from: today)
+							 ])
+		}
+		
+		let result = await request(url: url, expecting: [NewsStory].self)
+		
+		return result
+	}
+	
 	// MARK: - Private
 	
 	
 	private enum Endpoint: String {
 		case search
+		case topStories = "news"
+		case companyNews = "company-news"
 	}
 	
 	fileprivate enum NetworkError: Error {
